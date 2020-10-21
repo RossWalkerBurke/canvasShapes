@@ -1,21 +1,91 @@
-
 <!DOCTYPE html>
 <html>
 
 <head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta http-equiv="Content-type" content="text/html" charset="utf-8">
+    <script type="text/javascript" charset="utf-8">
+        function pageLoaded() {
 
-    <title>canvas shapes</title>
-    <link rel="stylesheet" href="css/main.css"/>
-    <link rel="icon" href="images/favicon.png"/>
+            // get a handle to the canvas context
+            var canvas = document.getElementById("the_canvas");
 
+            // get 2D context for this canvas
+            var context = canvas.getContext("2d");
 
+            // draw Square
+            context.fillRect(50, 50, 100, 100);
+	    
+            //draw rectangle
+	    context.fillRect(50, 200, 200, 100);
+
+            // Complex Paths
+            // Filled Triangle
+            context.beginPath();
+            context.moveTo(50,475);
+            context.lineTo(50,325);
+            context.lineTo(200,400);
+            context.fill();
+
+            // Complex Paths
+            // Filled kite
+            context.beginPath();
+            context.moveTo(600,50);
+            context.lineTo(550,100);
+            context.lineTo(600,250);
+            context.lineTo(650,100);
+            context.fill();
+
+            // Filled circle
+            context.beginPath();
+            context.arc(400,150,60,60,Math.PI,true);
+            context.stroke();
+            context.fill(); 
+
+            // Filled semi-circle
+            context.beginPath();
+            context.arc(400,300,60,0,Math.PI,true);
+            context.stroke();
+            context.fill();
+
+            // Complex Paths
+            // Filled diamond
+            context.beginPath();
+            context.moveTo(300,400);
+            context.lineTo(250,450);
+            context.lineTo(350,550);
+            context.lineTo(450,450);
+            context.lineTo(400,400);
+            context.fill();
+
+            // Complex Paths
+            // Filled Rupee
+            context.beginPath();
+            context.moveTo(550,350);
+            context.lineTo(500,400);
+            context.lineTo(500,550);
+            context.lineTo(550,600);
+            context.lineTo(600,550);
+            context.lineTo(600,400);
+            context.fill();
+
+            // Filled Ellipse
+            context.beginPath();
+            context.ellipse(700,300,60,120,Math.PI,8,0,Math.PI);
+            context.stroke();
+            context.fill();
+
+        }
+    </script>
 </head>
 
-<body>
-    <script src="js/scripts.js"></script>
+<body onload="pageLoaded()">
+
+    <h1>Sample Canvas Shapes</h1>
+
+    <canvas id="the_canvas" width="800" height="600" style="border: black 1px solid;">
+        Oops! looks like your browser does not support canvas tag
+    </canvas>
+
 </body>
 
 </html>
